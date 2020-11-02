@@ -1,7 +1,6 @@
 import bitstring
 import struct
 from binascii import hexlify
-from capstone import *
 
 ### When you're not the best or most extreme, you better get creative..
 
@@ -14,10 +13,6 @@ check_overflown = { # this dict is to know which byte to modify if overflown
     '2':False,
     '3':False
 }
-def assemble(compile_me):
-    md = Cs(CS_ARCH_X86, CS_MODE_32)
-    for i in md.disasm(compile_me, 0x00):
-        print("0x%x:\t%s\t%s" % (i.address, i.mnemonic, i.op_str))
 
 def overflown(): # subtract 1 from key value - 1 if the byte is overflown (add 1 to the front of the bad byte for sub)
     for key, value in check_overflown.items():
