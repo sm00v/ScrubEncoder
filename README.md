@@ -19,3 +19,5 @@ Payload Size: 52
 Note: The 'Hex Payload' is a non-formatted version of the entire payload and can be copy-pasted as is. 
 
 TODO: Reduce payload size by skipping good 4 byte sequences
+
+#OSCE #OffensiveSecurity #ExploitDev
